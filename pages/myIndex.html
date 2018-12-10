@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的首页</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #castSel {
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.3s;
+            -moz-box-shadow:1px 0px 5px #8F8F8F; -webkit-box-shadow:1px 0px 5px #8F8F8F; box-shadow:1px 0px 5px #8F8F8F;
+        }
+
+        fieldset {
+            border: none;
+            border-top: 1px solid #eee;
+            margin-top: 14px;
+            color: #296fd1;
+            padding-bottom: 0px;
+        }
+
+        .layui-row div {
+            text-align: center;
+            height: 24px;
+            line-height: 24px;
+            cursor: pointer;
+            color: #6d6d6d;
+        }
+
+        .active {
+            background: #ff9c00;
+            color: #fff !important;
+        }
+
+        .layui-form-item {
+            margin-bottom: 0px;
+        }
+
+        .layui-input-block {
+            min-height: 0px;
+        }
+
+        .layui-input {
+            height: 24px;
+        }
+
+        .layui-form-label {
+            padding: 0px;
+            line-height: 24px;
+        }
+
+        .layui-form-select dl dd {
+            line-height: 20px;
+        }
+
+        .layui-form-select dl {
+            top: 26px;
+        }
+        .zdz,.jyyb_sz,.jyyb_dl,.radar,.yuntu,.flash{
+            padding: 5px 10px 10px 10px !important;
+        }
+        #switch_in{
+            position: absolute;
+            width: 22px;
+            height: 66px;
+            background: rgba(81, 155, 218,.8);
+            border: 1px solid #296fcb;
+            border-radius: 2px;
+            top:36px;
+            left:300px;
+            line-height: 66px;
+            text-align: center;
+            color: #fff;
+            -moz-box-shadow:1px 0px 5px #8F8F8F; -webkit-box-shadow:1px 0px 5px #8F8F8F; box-shadow:1px 0px 5px #8F8F8F;
+            cursor: pointer;
+        }
+        #switch_out{
+            position: absolute;
+            width: 22px;
+            height: 66px;
+            background: rgba(81, 155, 218,.8);
+            border: 1px solid #296fcb;
+            border-radius: 2px;
+            top:36px;
+            left:0px;
+            line-height: 66px;
+            text-align: center;
+            color: #fff;
+            display: none;
+            -moz-box-shadow:1px 0px 5px #8F8F8F; -webkit-box-shadow:1px 0px 5px #8F8F8F; box-shadow:1px 0px 5px #8F8F8F;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gisMap" style="height:100%">
+        <div style="width: 100%;text-align: center;font-size: 30px">地图区域 </div>
+        <div id="castSel">
+            <div class="title" style="height:36px;background-color:#52a7fa;font-size: 16px;color:#fff;line-height: 36px;">
+                <i class="layui-icon layui-icon-theme" style="font-size: 24px;margin: 0 10px;"></i>
+                预报选择
+            </div>
+            <fieldset>
+                <legend>自动站</legend>
+            </fieldset>
+            <div class="zdz" style=" border-bottom: 1px dotted #ddd">
+                <div class="layui-row" style="border: 1px solid #ddd;">
+                    <div class="layui-col-md4">2分风速</div>
+                    <div class="layui-col-md4 active">10分风速</div>
+                    <div class="layui-col-md4">瞬时风速</div>
+                </div>
+                <div class="layui-row" style="border: 1px solid #ddd;margin-top: 3px;">
+                    <div class="layui-col-md4">湿度</div>
+                    <div class="layui-col-md4 active">温度</div>
+                    <div class="layui-col-md4">能见度</div>
+                </div>
+                <div class="layui-row" style="border: 1px solid #ddd;margin-top: 3px;">
+                    <div class="layui-col-md3">1小时</div>
+                    <div class="layui-col-md3 active">3小时</div>
+                    <div class="layui-col-md3">6小时</div>
+                    <div class="layui-col-md3">12小时</div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>降雨预报-数值</legend>
+            </fieldset>
+            <div class="jyyb_sz" style=" border-bottom: 1px dotted #ddd">
+                <div class="layui-row" style="border: 1px solid #ddd;">
+                    <div class="layui-col-md3">1小时</div>
+                    <div class="layui-col-md3 active">3小时</div>
+                    <div class="layui-col-md3">6小时</div>
+                    <div class="layui-col-md3">12小时</div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>降雨预报-短临</legend>
+            </fieldset>
+            <div class="jyyb_dl" style="border-bottom: 1px dotted #ddd">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="color:#6d6d6d">数据来源：</label>
+                        <div class="layui-input-block">
+                            <select name="sjly" >
+                                <option value="0">SWAN</option>
+                                <option value="1">SWAN</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-row" style="border: 1px solid #ddd;margin-top: 3px;">
+                    <div class="layui-col-md3">1小时</div>
+                    <div class="layui-col-md3 active">3小时</div>
+                    <div class="layui-col-md3">6小时</div>
+                    <div class="layui-col-md3">12小时</div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>雷达</legend>
+            </fieldset>
+            <div class="radar" style="border-bottom: 1px dotted #ddd">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="color:#6d6d6d">数据来源：</label>
+                        <div class="layui-input-block">
+                            <select name="sjly">
+                                <option value="0">SWAN</option>
+                                <option value="1">SWAN</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-row" style="border: 1px solid #ddd;margin-top: 3px;">
+                    <div class="layui-col-md3">1小时</div>
+                    <div class="layui-col-md3 active">3小时</div>
+                    <div class="layui-col-md3">6小时</div>
+                    <div class="layui-col-md3">12小时</div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>云图</legend>
+            </fieldset>
+            <div class="yuntu" style="border-bottom: 1px dotted #ddd">
+                <div class="layui-row" style="border: 1px solid #ddd;">
+                    <div class="layui-col-md3">1小时</div>
+                    <div class="layui-col-md3 active">3小时</div>
+                    <div class="layui-col-md3">6小时</div>
+                    <div class="layui-col-md3">12小时</div>
+                </div>
+            </div>
+            <fieldset>
+                <legend>闪电</legend>
+            </fieldset>
+            <div class="flash" style="border-bottom: 1px dotted #ddd">
+                <div class="layui-row" style="border: 1px solid #ddd;">
+                    <div class="layui-col-md3">粤港澳</div>
+                    <div class="layui-col-md3 active">华南</div>
+                    <div class="layui-col-md3">电力局</div>
+                    <div class="layui-col-md3">全闪</div>
+                </div>
+            </div>
+            <form class="layui-form" style="margin-top:5px;">
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left:10px;">
+                        <input type="checkbox" name="like[write]" title="易燃爆炸" lay-skin="primary">
+                        <input type="checkbox" name="like[read]" title="船舶码头" lay-skin="primary" checked>
+                        <input type="checkbox" name="like[dai]" title="城建" lay-skin="primary">
+                        <input type="checkbox" name="like[write]" title="易燃爆炸" lay-skin="primary">
+                        <input type="checkbox" name="like[read]" title="船舶码头" lay-skin="primary" checked>
+                        <input type="checkbox" name="like[dai]" title="城建" lay-skin="primary">
+                    </div>
+                </div>
+            </form>
+            <div id="switch_in">
+                    <i class="layui-icon layui-icon-prev"></i> 
+            </div>
+        </div>
+        <div id="switch_out" >
+                <i class="layui-icon layui-icon-next"></i>
+        </div>
+        
+    </div>
+
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(['element', 'form','jquery'], function () {
+            var element = layui.element,
+                form = layui.form,
+                $ = layui.$;
+
+            $('#switch_in').on('click',function(){
+                $('#castSel').css('left','-100%');
+                $('#switch_out').fadeIn(200);
+            })
+            $('#switch_out').on('click',function(){
+                $('#castSel').css('left','0px');
+                $('#switch_out').fadeOut(50);
+            })
+
+        });
+
+
+    </script>
+</body>
+
+</html>

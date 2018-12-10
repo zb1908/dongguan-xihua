@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>东莞市专业细化服务平台</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        .layui-layout-admin .layui-footer {
+            left: 0;
+            height: 80px;
+            background-color: #016dd0;
+            line-height: 20px;
+        }
+
+        .layui-layout-admin .layui-body {
+            top: 115px;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        .layui-this{
+            background-color: #52a7fa
+        }
+        .layui-this a{
+            color:#fff !important;
+        }
+        .layui-nav .layui-this::after{
+            height: 0px;
+
+        }
+        .layui-nav-bar{
+            height: 0px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header" style="background-color:#0869c4">
+            <div class="layui-logo" style="font-size:20px;width: 330px;color: #fff;">
+                <img src="./images/logo_chn.png" alt="">
+                东莞市专业细化服务平台</div>
+            <div class="layui-layout-right" style="width:200px;height: 60px;display: flex;justify-content:center;align-items:Center;">
+                <button class="layui-btn layui-btn-normal">
+                    <i class="layui-icon layui-icon-username"></i> 登陆
+                </button>
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <ul class="layui-nav" style="height:55px;background-color:#0b53a7;display: flex;justify-content:center;align-items:Center;">
+                    <li class="layui-nav-item layui-this"><a href="pages/myIndex.html" style="color:#fff" target="mainiframe">
+                            <dl>
+                                <dt style="line-height:33px;text-align:center;height:33px"><i class="layui-icon layui-icon-home"
+                                        style="font-size: 24px;"></i></dt>
+                                <dd style="line-height:22px;">我的首页</dd>
+                            </dl>
+                        </a></li>
+                    <li class="layui-nav-item"><a href="pages/yujing.html" style="color:#fff" target="mainiframe">
+                            <dl>
+                                <dt style="line-height:33px;text-align:center;height:33px"><i class="layui-icon layui-icon-notice"
+                                        style="font-size: 24px;"></i></dt>
+                                <dd style="line-height:22px;">预警提示</dd>
+                            </dl>
+                        </a></li>
+                    <li class="layui-nav-item"><a href="" style="color:#fff" target="mainiframe">
+                            <dl>
+                                <dt style="line-height:33px;text-align:center;height:33px"><i class="layui-icon layui-icon-app"
+                                        style="font-size: 24px;"></i></dt>
+                                <dd style="line-height:22px;">格点预报</dd>
+                            </dl>
+                        </a></li>
+                    <li class="layui-nav-item"><a href="" style="color:#fff" target="mainiframe">
+                            <dl>
+                                <dt style="line-height:33px;text-align:center;height:33px"><i class="layui-icon layui-icon-release"
+                                        style="font-size: 24px;"></i></dt>
+                                <dd style="line-height:22px;">服务发布</dd>
+                            </dl>
+                        </a></li>
+                    <li class="layui-nav-item"><a href="pages/system.html" style="color:#fff" target="mainiframe">
+                            <dl>
+                                <dt style="line-height:33px;text-align:center;height:33px"><i class="layui-icon layui-icon-console"
+                                        style="font-size: 24px;"></i></dt>
+                                <dd style="line-height:22px;">系统监控</dd>
+                            </dl>
+                        </a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body" style="background-color: #a3c9f0">
+            <!-- 内容主体区域 -->
+            <iframe name="mainiframe" src="pages/myIndex.html" id="mainiframe" scrolling="no" frameborder="0" width="100%"
+                height="100%"></iframe>
+        </div>
+
+
+        <div class="layui-footer" style="display: flex;justify-content:center;align-items:Center;">
+            <!-- 底部固定区域 -->
+            <div class="logoChn">
+                <dl>
+                    <dt><img src="./images/logo_chn.png" style="width:38px;margin:0 auto;display: block"></dt>
+                    <dd style="color:#a3c9f0">东莞市公共气象服务中心</dd>
+                </dl>
+            </div>
+            <div class="info" style="color:#a3c9f0;margin-left: 30px;">
+                <span>主办单位：东莞市公共气象服务中心</span><br>
+                <span>单位地址：东莞市中街路38号</span><br>
+                <span>东莞市公共气象服务中心版权所有 &nbsp;未经授权 &nbsp;不得转载</span>
+            </div>
+            <div class="tel" style="color:#a3c9f0;margin-left: 30px;">
+                <span>联系电话：0756-8888888</span><br>
+                <span>备案序号：粤ICP备10008888号</span><br>
+                <span>技术支持：北京双顺达信息技术有限公司</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./layui/layui.js"></script>
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
+
+        });
+    </script>
+</body>
+
+</html>

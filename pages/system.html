@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预警提示</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .layui-nav-tree .layui-nav-item a {
+            height: 70px;
+            line-height: 70px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .layui-nav-tree .layui-this>a {
+            background-color: #52a7fa;
+            color: #fff;
+        }
+        .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+            background-color: #52a7fa;
+        }
+        .layui-body {
+
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layui-layout">
+        <div class="layui-side" style="background-color:#0b53a7">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" style="background-color:#0b53a7">
+                    <li class="layui-nav-item layui-this"><a href="system-data.html" target="systemiframe">监测数据</a></li>
+                    <li class="layui-nav-item"><a href="system-gift.html" target="systemiframe">GIFT格点数据监测</a></li>
+                    <li class="layui-nav-item"><a href="system-jma.html" target="systemiframe">JMA格点数据</a></li>
+                    <li class="layui-nav-item"><a href="system-grapes.html" target="systemiframe">Grapes9km格点数据</a></li>
+                    <li class="layui-nav-item"><a href="system-jiankong.html" target="systemiframe">自动站数据入库监控</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div style="padding: 30px;height: 100%;box-sizing: border-box;background: #f8f8f8">
+                <iframe name="systemiframe" src="system-data.html" id="systemiframe" scrolling="no" frameborder="0"
+                    width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(['element', 'form', 'jquery'], function () {
+            var element = layui.element,
+                form = layui.form,
+                $ = layui.$;
+
+
+
+        });
+    </script>
+</body>
+
+</html>

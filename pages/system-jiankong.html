@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预警提示</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .title {
+            height: 48px;
+            background: #1294f4;
+            color: #fff;
+            font-size: 16px;
+            line-height: 48px;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .tableBox {
+
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+    .jkBox{
+        height: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    .layui-table-cell{
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="layui-row" style="height:100%">
+        <div class="layui-col-md12 jkBox">
+            <div class="title"> <span style="float:left">自动站数据入库监控</span>
+                <form class="layui-form" style="float:left;margin-left:80px;">
+                    <div class="layui-form-item" style="margin-bottom:0px;">
+                        <label class="layui-form-label" style="line-height:30px;">日期：</label>
+                        <div class="layui-input-block" style="float:left;margin-left: 0px;margin-top: 9px;">
+                            <input type="text" name="date" required lay-verify="required" placeholder=" " autocomplete="off"
+                                class="layui-input" style="height:30px">
+                        </div>
+                        <button class="layui-btn layui-btn-normal" style="margin-bottom: 2px;margin-left:20px;height: 30px;line-height: 30px;">
+                            <i class="layui-icon layui-icon-search"></i> 查询
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="tableBox">
+                <table lay-filter="jiankongTable">
+                    <thead>
+                        <tr>
+                            <th lay-data="{field:'num'}">序号</th>
+                            <th lay-data="{field:'time'}">时间</th>
+                            <th lay-data="{field:'data'}">监控数据</th>
+                            <th lay-data="{field:'ok'}">是否正常</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2018-12-06 16:25:36</td>
+                            <td>监控数据正常条数：1</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2018-12-06 16:25:36</td>
+                            <td>监控数据正常条数：1</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2018-12-06 16:25:36</td>
+                            <td>监控数据正常条数：1</td>
+                            <td>否</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.use(['element', 'form', 'table', 'jquery'], function () {
+            var element = layui.element,
+                form = layui.form,
+                table = layui.table,
+                $ = layui.$;
+
+            //转换静态表格
+            table.init('jiankongTable', {
+                cellMinWidth: 200,//全局定义常规单元格的最小宽度
+                height: 'full-100', //设置最大高度-差值
+                limit: 10, //注意：请务必确保 limit 参数（默认：10）是与你服务端限定的数据条数一致
+                skin:'nob',
+                even: true, //开启隔行背景
+                page:true,//开启分页
+                //支持所有基础参数
+            });
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
